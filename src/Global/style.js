@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import  { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -25,3 +25,8 @@ a {
 }
 
 `;
+
+// const Flex = styled.div`
+//   display: flex;
+//   align-items: center;
+// `;
