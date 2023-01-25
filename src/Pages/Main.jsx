@@ -1,12 +1,22 @@
 import React from 'react'
-import Header from '../Components/Header'
-import Subscripe from '../Components/Subscribe';
+import Header from "../Sections/Header";
+import Subscripe from "../Sections/Subscribe";
+import MainFooter from "../Sections/MainFooter";
+import Suppliers from "../Sections/Suppliers";
+import Services from "../Sections/Services";
+import Recommendeds from "../Sections/Recommendeds";
+import Request from '../Sections/Request';
 
 export default function Main() {
   return (
     <>
       <Header />
-      <Subscripe/>
+      <Request/>
+      <Recommendeds/>
+      <Services />
+      <Suppliers />
+      <Subscripe />
+      <MainFooter />
     </>
   );
 }

@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 // importing the logo picture 
@@ -10,7 +11,9 @@ const LogoBox = styled.div`
 export default function Logo() {
   return (
     <LogoBox>
+      <NavLink to="/main">
       <img src={logo} alt="Brand Logo" />
+      </NavLink>
     </LogoBox>
   );
 }

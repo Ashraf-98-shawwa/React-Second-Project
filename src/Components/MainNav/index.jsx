@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Flex } from "../Header/style";
+import { FlexBetween } from "../../Sections/Header/style";
 
 // import menu icon
 import menu from "../../Pictures/menu.png";
@@ -26,20 +26,20 @@ export default function MainNav() {
   return (
     <MainNavList>
       <MainNavLi>
-        <Flex>
+        <FlexBetween>
           <img style={{ marginRight: "6px" }} src={menu} alt="menu icon" />
           All category
-        </Flex>
+        </FlexBetween>
       </MainNavLi>
       <MainNavLi>Hot offers</MainNavLi>
       <MainNavLi>Gift boxes</MainNavLi>
       <MainNavLi>Projects</MainNavLi>
       <MainNavLi>Menu item</MainNavLi>
       <MainNavLi>
-        <Flex>
+        <FlexBetween>
           Help
           <img style={{ marginRight: "6px" }} src={downarrow} alt="menu icon" />
-        </Flex>
+        </FlexBetween>
       </MainNavLi>
     </MainNavList>
   );

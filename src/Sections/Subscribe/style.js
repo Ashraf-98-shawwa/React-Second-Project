@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { SearchSubmit } from "../SearchBox/style";
+import { SearchSubmit } from "../../Components/SearchBox/style";
 
 export const SubscribeBox = styled.section`
   padding: 39px 0;
@@ -7,6 +7,7 @@ export const SubscribeBox = styled.section`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  background-color: #eff2f4;
 `;
 
 export const SubscribeH4 = styled.h4`

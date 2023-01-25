@@ -4,7 +4,7 @@ export const HeaderBox = styled.div`
   background-color: #fff;
 `;
 
-export const Flex = styled.div`
+export const FlexBetween = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;

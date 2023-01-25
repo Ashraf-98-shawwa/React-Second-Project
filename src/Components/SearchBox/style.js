@@ -33,23 +33,17 @@ export const SearchSubmit = styled.input`
   cursor: pointer;
   font-size: 15px;
   font-weight: 500;
-  /* border: 2px solid #0d6efd; */
-  /* border-top-right-radius: 8px; */
-  /* border-bottom-right-radius: 8px; */
-
-
 `;
 
 
 export const SearchSelect = styled.select`
   padding: 11px 5px 10px 10px;
-  /* padding: 10px 5px 8px 10px; */
   border-radius: 0;
   border: none;
-  /* border-right: 2px solid #0d6efd; */
   border-left: 2px solid #0d6efd;
   color: #1c1c1c;
   font-size: 16px;
+  cursor: pointer;
 width:144px;
   &:focus {
     outline: none;
