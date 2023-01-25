@@ -11,11 +11,13 @@ import CategoryList from "../Sections/CategoryList";
 // importing category photos
 import Outdoor from "../Pictures/Outdoor.png";
 import Electronics from "../Pictures/Electronics.png";
+import Hero from "../Sections/Hero";
 
 export default function Main() {
   return (
     <>
       <Header />
+      <Hero/>
       <CategoryList
         category="Home and outdoor"
         img={Outdoor} />

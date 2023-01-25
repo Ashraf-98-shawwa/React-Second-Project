@@ -1,11 +1,11 @@
 import React from "react";
 import CategoryProduct from "../../Components/CategoryProduct";
 import Container from "../../Components/Container";
+import Button from "../../Components/Button";
 import { Flex } from "../../Global/style";
 import { electronicsProducts, HomeProducts } from "./products";
 import {
   CategoryBox,
-  CategoryButton,
   CategoryListBox,
   CategoryName,
   ProductsBox,
@@ -19,7 +19,7 @@ export default function CategoryList(props) {
         <Flex>
           <CategoryBox img={props.img}>
             <CategoryName>{props.category}</CategoryName>
-            <CategoryButton type="button">Source now</CategoryButton>
+            <Button title="Source now" />
           </CategoryBox>
           <ProductsBox>
             {props.category === "Home and outdoor"

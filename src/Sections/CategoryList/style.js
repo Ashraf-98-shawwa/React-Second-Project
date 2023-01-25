@@ -33,16 +33,4 @@ export const CategoryName = styled.h4`
   width: 130px;
   margin-bottom: 18px;
 `;
-export const CategoryButton = styled.button`
-  background: #ffffff;
-  padding: 11px 15px 10px;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 19px;
-  color: #1c1c1c;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  border-radius: 6px;
-  box-shadow: 0px 1px 2px rgba(56, 56, 56, 0.08);
-`;
+
