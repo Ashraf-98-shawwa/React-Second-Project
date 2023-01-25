@@ -34,37 +34,37 @@ export default function Recommendeds() {
             img={P01}
           />
           <RecommendedItemCard
-            description="T-shirts with multiple colors, for men"
+            description="Jeans shorts for men blue color"
             price="$10.30"
             img={P02}
           />
           <RecommendedItemCard
-            description="T-shirts with multiple colors, for men"
-            price="$10.30"
+            description="Brown winter coat medium size"
+            price="$12.50"
             img={P03}
           />
           <RecommendedItemCard
-            description="T-shirts with multiple colors, for men"
-            price="$10.30"
+            description="Leather wallet"
+            price="$34.00"
             img={P04}
           />
           <RecommendedItemCard
-            description="T-shirts with multiple colors, for men"
-            price="$10.30"
+            description="Jeans bag for travel for men"
+            price="$99.00"
             img={P05}
           />
           <RecommendedItemCard
-            description="T-shirts with multiple colors, for men"
-            price="$10.30"
+            description="Canon camera black, 100x zoom"
+            price="$9.99"
             img={P06}
           />
           <RecommendedItemCard
-            description="T-shirts with multiple colors, for men"
-            price="$10.30"
+            description="Headset for gaming with mic"
+            price="$8.99"
             img={P07}
           />
           <RecommendedItemCard
-            description="T-shirts with multiple colors, for men"
+            description="Smartwatch silver color modern"
             price="$10.30"
             img={P05}
           />
@@ -74,8 +74,8 @@ export default function Recommendeds() {
             img={P08}
           />
           <RecommendedItemCard
-            description="T-shirts with multiple colors, for men"
-            price="$10.30"
+            description="Jeans bag for travel for men"
+            price="$80.95"
             img={P09}
           />
         </Flex>
