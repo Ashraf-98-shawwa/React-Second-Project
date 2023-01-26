@@ -17,6 +17,7 @@ import {
 
 // import avatar pic
 import avatar from "../../Pictures/Avatar.png";
+import { NavLink } from "react-router-dom";
 
 export default function Hero() {
   return (
@@ -48,23 +49,27 @@ export default function Hero() {
                     Hi, user <br /> let’s get stated
                   </CardP>
                 </Flex>
-                <CardButton
-                  bordercolor="#0D6EFD"
-                  color="white"
-                  bgcolor="#0D6EFD"
-                  type="button"
-                >
-                  Join now
-                </CardButton>
+                <NavLink to="/Sign-up">
+                  <CardButton
+                    bordercolor="#0D6EFD"
+                    color="white"
+                    bgcolor="#0D6EFD"
+                    type="button"
+                  >
+                    Join now
+                  </CardButton>
+                </NavLink>
+                <NavLink to="/login">
                 <CardButton
                   bordercolor="#E3E8EE"
                   bgcolor="white"
                   color="#0D6EFD"
                   type="button"
                   MT="6"
-                >
+                  >
                   Log in
                 </CardButton>
+                  </NavLink>
               </Card>
               <Card color="#F38332">Get US $10 off with a new supplier</Card>
               <Card color="#55BDC3">Send quotes with supplier preferences</Card>

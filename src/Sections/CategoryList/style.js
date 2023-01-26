@@ -20,8 +20,9 @@ export const CategoryBox = styled.div`
   padding: 20px;
 `;
 export const ProductsBox = styled.div`
-display:flex;
-flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(100% - 280px);
 `;
 
 export const CategoryName = styled.h4`

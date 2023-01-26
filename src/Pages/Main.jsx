@@ -12,12 +12,14 @@ import CategoryList from "../Sections/CategoryList";
 import Outdoor from "../Pictures/Outdoor.png";
 import Electronics from "../Pictures/Electronics.png";
 import Hero from "../Sections/Hero";
+import Offers from "../Sections/Offers";
 
 export default function Main() {
   return (
     <>
       <Header />
-      <Hero/>
+      <Hero />
+      <Offers/>
       <CategoryList
         category="Home and outdoor"
         img={Outdoor} />
