@@ -16,13 +16,13 @@ export default function LayoutFilter(props) {
           <option value="Featured">Featured</option>
         </Select>
         <DisplayFilter
-          onClick={props.HandleLayout}
+          onClick={props.HandleSquaredLayout}
           className={props.squared ? "active" : ""}
         >
           <img src={squared} alt="squared siplay" />
         </DisplayFilter>
         <DisplayFilter
-          onClick={props.HandleLayout}
+          onClick={props.HandleLinedLayout}
           className={props.lined ? "active" : ""}
         >
           <img src={Lined} alt="Lined siplay" />

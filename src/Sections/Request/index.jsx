@@ -1,6 +1,5 @@
 import React from "react";
 import Container from "../../Components/Container";
-import { Inputt } from "../../Components/Input/style";
 import { Flex, SectionsTitle } from "../../Global/style";
 import {
   RequestBox,

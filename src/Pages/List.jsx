@@ -8,17 +8,20 @@ import Subscripe from "../Sections/Subscribe";
 export default function List() {
   const [Layout, SetLayout] = useState("lined");
 
-  const HandleLayout = () => {
-    SetLayout((prevstate)=>  prevstate==="lined" ? "" : "lined");
+  const HandleLinedLayout = () => {
+    SetLayout("lined");
+  }
+  const HandleSquaredLayout = () => {
+    SetLayout("squared");
   }
   return (
     <>
       <Header />
       <Breadcrumb />
       {Layout === "lined" ? (
-        <Content lined HandleLayout={HandleLayout} />
+        <Content  lined HandleSquaredLayout={HandleSquaredLayout} HandleLinedLayout={HandleLinedLayout} />
       ) : (
-        <Content HandleLayout={HandleLayout} />
+        <Content HandleSquaredLayout={HandleSquaredLayout} HandleLinedLayout={HandleLinedLayout} />
       )}
       <Subscripe />
       <MainFooter />

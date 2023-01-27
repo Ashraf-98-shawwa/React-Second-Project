@@ -7,16 +7,24 @@ export const SelectedProductCardBox = styled.div`
   border: 1px solid #e3e8ee;
   border-radius: 6px;
   position: relative;
+  width: ${(props) => (props.width ? "282px" : "")};
+  height: ${(props) => (props.height ? "405px" : "")};
 `;
 
-export const ProductDetails = styled.div``;
+export const ProductDetails = styled.div`
+  margin-top: ${(props) => (props.MT ? "33px" : "")}; ;
+`;
 
 export const ProductName = styled.h5`
-  font-weight: 500;
+  font-weight: ${(props) => (props.FW ? "400" : "500")};
   font-size: 16px;
+  letter-spacing: -0.2px;
   line-height: 22px;
-  color: #1c1c1c;
+  color: ${(props) => (props.color ? " #606060" : "#1c1c1c")};
   margin-bottom: 16px;
+  margin-top: ${(props) => (props.MT ? "13px" : "")};
+  width: ${(props)=> props.width? "200px":""};
+  
 `;
 
 export const ProductPrice = styled.span`
@@ -95,7 +103,8 @@ export const Heart = styled.div`
   border-radius: 6px;
   background: #ffffff;
   position: absolute;
-  top: 20px;
+  top: ${(props) => (props.bottom ? "" : "20px")};
+  bottom: ${(props) => (props.bottom ? "110px" : "")};
   right: 20px;
   display: flex;
   align-items: center;
