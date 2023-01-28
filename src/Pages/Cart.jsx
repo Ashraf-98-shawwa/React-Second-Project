@@ -16,7 +16,7 @@ export default function Cart() {
       <CartProducts />
       <Pros />
       <ForLater />
-      <DiscountBanner />
+      <DiscountBanner MB="41px" />
       <Subscribe />
       <MainFooter />
     </>

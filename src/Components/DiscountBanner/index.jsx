@@ -56,10 +56,10 @@ const ShopButton = styled.button`
   line-height: 19px;
   cursor: pointer;
 `;
-export default function DiscountBanner() {
+export default function DiscountBanner(props) {
   return (
     <Container>
-      <DiscountBannerBox MB="88px">
+      <DiscountBannerBox MB={props.MB}>
         <Flex align="center" justify="space-between">
           <div>
             <BannerH4>Super discount on more than 100 USD</BannerH4>
