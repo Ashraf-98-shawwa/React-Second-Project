@@ -1,9 +1,22 @@
 import React from "react";
 import Container from "../../Components/Container";
-import { DescriptionP, DownBox, Features, LeftList, LeftListItem, OverviewNav, OverviewNavTab, ProductFeature, ProductOverviewBox, ProductTable, RightList, RightListItem } from "./style";
+import {
+  DescriptionP,
+  DownBox,
+  Features,
+  LeftList,
+  LeftListItem,
+  OverviewNav,
+  OverviewNavTab,
+  ProductFeature,
+  ProductOverviewBox,
+  ProductTable,
+  RightList,
+  RightListItem,
+} from "./style";
 
-// import icon 
-import True from "../../Pictures/true.png"
+// import icon
+import True from "../../Pictures/true.png";
 import { Flex } from "../../Global/style";
 import SuggestedProducts from "../../Components/SuggestedProducts";
 
@@ -65,8 +78,8 @@ export default function ProductOverview() {
               </ProductFeature>
             </Features>
           </DownBox>
-              </ProductOverviewBox>
-              <SuggestedProducts/>
+        </ProductOverviewBox>
+        <SuggestedProducts />
       </Flex>
     </Container>
   );

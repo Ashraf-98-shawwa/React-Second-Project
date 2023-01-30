@@ -71,6 +71,9 @@ export const Orders = styled.span`
   font-size: 16px;
   line-height: 19px;
   color: #8b96a5;
+  display: flex;
+  align-items: center;
+  gap:9px;
 `;
 
 export const Shipping = styled.span`
