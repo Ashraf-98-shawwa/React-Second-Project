@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import styled from "styled-components";
 import {
   Dot,
   Orders,
   Rate,
   RateOrderShiping,
-  Shipping,
 } from "../../Components/SelectedProductCard/style";
 import Container from "../../Components/Container";
 import { Flex } from "../../Global/style";

@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-import rec from "../../Pictures/rec.png"
 import { CardButton } from "../Hero/style";
 
 
