@@ -13,7 +13,7 @@ import O5 from "../../Pictures/O5.png";
 
 const OffersSectionBox = styled.section`
   margin-top: 30px;
-  background-color: #fff;
+  background-color: ${(props) => props.theme.pallet.Box};
   border: 1px solid #e3e8ee;
   border-radius: 6px;
 `;
@@ -28,7 +28,7 @@ const SectionNameH3 = styled.h3`
   font-size: 20px;
   line-height: 28px;
   letter-spacing: -0.2px;
-  color: #1c1c1c;
+  color: ${(props) => props.theme.pallet.Text};
 `;
 
 const SectionDescriptionP = styled.p`

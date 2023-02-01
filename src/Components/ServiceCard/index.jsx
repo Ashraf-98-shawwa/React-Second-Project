@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const ServiceCardBox = styled.div`
-  background: #ffffff;
+  background-color: ${(props) => props.theme.pallet.Box};
   border: 1px solid #e0e0e0;
   border-radius: 6px;
 `;
@@ -22,7 +22,7 @@ const NameP = styled.div`
   font-weight: 500;
   font-size: 16px;
   line-height: 22px;
-  color: #1c1c1c;
+  color: ${(props) => props.theme.pallet.Text};
 `;
 
 const IconDiv = styled.div`

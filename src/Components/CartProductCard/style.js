@@ -17,7 +17,7 @@ export const Name = styled.h3`
   font-weight: 500;
   font-size: 16px;
   line-height: 22px;
-  color: #1c1c1c;
+  color: ${(props) => props.theme.pallet.Text};
   margin-bottom: 6px;
 `;
 export const Desc = styled.p`
@@ -34,24 +34,27 @@ export const Price = styled.h2`
   font-weight: 500;
   font-size: 16px;
   line-height: 22px;
-  color: #1c1c1c;
+  color: ${(props) => props.theme.pallet.Text};
 `;
 export const CartSelect = styled.select`
-  background: #ffffff;
   border: 1px solid #e3e8ee;
   border-radius: 6px;
   font-weight: 400;
   font-size: 16px;
-  color: #1c1c1c;
+  color: ${(props) => props.theme.pallet.Text};
   width: 123px;
   height: 40px;
   outline: none;
-  appearance:none;
+  appearance: none;
   padding: 10px;
   cursor: pointer;
   background-color: transparent;
   z-index: 1;
-  `;
+
+  & option {
+    background-color: ${(props) => props.theme.pallet.Box};
+  }
+`;
 
 
   export const ShopRemove = styled.div`

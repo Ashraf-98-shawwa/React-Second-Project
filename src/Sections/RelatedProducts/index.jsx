@@ -14,7 +14,7 @@ import R5 from "../../Pictures/R5.png";
 import R6 from "../../Pictures/F2.png";
 
 const RelatedProductsBox = styled.div`
-  background: #ffffff;
+  background-color: ${(props) => props.theme.pallet.Box};
   border: 1px solid #e3e8ee;
   border-radius: 6px;
   padding: 20px 26px 35px 22px;

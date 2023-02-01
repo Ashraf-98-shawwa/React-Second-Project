@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ProductOverviewBox = styled.div`
   width: 880px;
-  background: #ffffff;
+  background-color: ${(props) => props.theme.pallet.Box};
   border: 1px solid #e3e8ee;
   box-shadow: 0px 1px 3px rgba(56, 56, 56, 0.1);
   border-radius: 6px;
@@ -46,7 +46,7 @@ export const DescriptionP = styled.p`
   font-size: 16px;
   line-height: 24px;
   letter-spacing: -0.2px;
-  color: #505050;
+  color: ${(props) => props.theme.pallet.fifty};
   width: 798px;
   margin-bottom: 24px;
 `;
@@ -61,22 +61,22 @@ export const RightList = styled.ul``;
 export const Features = styled.div``;
 
 export const LeftListItem = styled.li`
-  background: #eff2f4;
+  background-color: ${(props) => props.theme.pallet.listbg};
   padding: 10px 147px 7px 10px;
   border: 1px solid #e3e8ee;
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  color: #505050;
+  color: ${(props) => props.theme.pallet.fifty};
 `;
 export const ProductFeature = styled.div`
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
   letter-spacing: -0.2px;
-  color: #505050;
+  color: ${(props) => props.theme.pallet.fifty};
   display: flex;
-  gap:10px;
+  gap: 10px;
   align-items: center;
   margin-bottom: 10px;
 `;
@@ -88,5 +88,5 @@ export const RightListItem = styled.li`
   font-size: 16px;
   line-height: 24px;
   letter-spacing: -0.2px;
-  color: #505050;
+  color: ${(props) => props.theme.pallet.fifty};
 `;

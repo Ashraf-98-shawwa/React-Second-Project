@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 
 export const ForLaterBox = styled.div`
-  background: #ffffff;
+  background-color: ${(props) => props.theme.pallet.Box};
   border: 1px solid #e3e8ee;
   border-radius: 6px;
   margin-top: 31px;
@@ -14,6 +14,6 @@ export const SectionName = styled.h3`
   font-size: 20px;
   line-height: 28px;
   letter-spacing: -0.2px;
-  color: #1c1c1c;
+  color: ${(props) => props.theme.pallet.Text};
   margin-bottom: 22px;
 `;

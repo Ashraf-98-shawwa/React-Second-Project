@@ -2,7 +2,7 @@
 import styled from "styled-components";
 
 export const LayoutFilterBox = styled.div`
-  background-color: ${(props) => props.theme.pallet.page};
+  background-color: ${(props) => props.theme.pallet.Box};
   border: 1px solid #e3e8ee;
   border-radius: 6px;
   display: flex;

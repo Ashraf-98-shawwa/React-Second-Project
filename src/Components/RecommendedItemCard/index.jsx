@@ -6,7 +6,7 @@ import styled from 'styled-components'
 
 const RecommendedItemBox = styled.div`
   padding: 9px 10px;
-  background: #ffffff;
+  background-color: ${(props) => props.theme.pallet.Box};
   border: 1px solid #e0e0e0;
   border-radius: 6px;
   width: 220px;
@@ -16,7 +16,7 @@ const ItemPrice = styled.h4`
   font-weight: 500;
   font-size: 16px;
   line-height: 22px;
-  color: #1c1c1c;
+  color: ${(props) => props.theme.pallet.Text};
 `;
 const ItemDescription = styled.p`
   font-weight: 400;

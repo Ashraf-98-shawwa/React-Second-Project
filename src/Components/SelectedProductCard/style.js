@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const SelectedProductCardBox = styled.div`
   margin-top: 20px;
   padding: 21px 20px 24px 20px;
-  background-color: #fff;
+  background-color: ${(props) => props.theme.pallet.Box};
   border: 1px solid #e3e8ee;
   border-radius: 6px;
   position: relative;
@@ -20,11 +20,11 @@ export const ProductName = styled.h5`
   font-size: 16px;
   letter-spacing: -0.2px;
   line-height: 22px;
-  color: ${(props) => (props.color ? " #606060" : "#1c1c1c")};
+  color: ${(props) => props.theme.pallet.Text};
+
   margin-bottom: 16px;
   margin-top: ${(props) => (props.MT ? "13px" : "")};
-  width: ${(props)=> props.width? "200px":""};
-  
+  width: ${(props) => (props.width ? "200px" : "")};
 `;
 
 export const ProductPrice = styled.span`
@@ -33,7 +33,7 @@ export const ProductPrice = styled.span`
   font-size: 20px;
   line-height: 28px;
   letter-spacing: -0.2px;
-  color: #1c1c1c;
+  color: ${(props) => props.theme.pallet.Text};
   margin-right: 7px;
 `;
 

@@ -19,6 +19,7 @@ import P09 from "../../Pictures/09.png";
 
 const RecommendedsBox = styled.div`
   padding-top: 30px;
+  
 `
 
 

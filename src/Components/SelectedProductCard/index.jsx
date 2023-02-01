@@ -32,7 +32,7 @@ export default function SelectedProductCard(props) {
   if (props.row) {
     return (
       <SelectedProductCardBox>
-        <Flex>
+        <Flex gap="5">
           <div>
             <img  width="189px" src={props.img} alt="selected product" />
           </div>

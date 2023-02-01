@@ -7,13 +7,13 @@ export const SubscribeBox = styled.section`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: #eff2f4;
+  background-color: ${(props) => props.theme.pallet.subscribe};
 `;
 
 export const SubscribeH4 = styled.h4`
   font-weight: 600;
   font-size: 20px;
-  color: #1c1c1c;
+  color: ${(props) => props.theme.pallet.Text};
 `;
 export const Subscribep = styled.p`
   font-weight: 400;

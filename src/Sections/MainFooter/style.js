@@ -43,10 +43,10 @@ export const FooterListitem = styled.li`
 `;
 
 export const CopyRightBox = styled.div`
-background-color: #EFF2F4;
-border-top: 1px solid #E3E8EE;
-padding: 23px 0px 21px;
-`
+  background-color: ${(props) => props.theme.pallet.subscribe};
+  border-top: 1px solid #e3e8ee;
+  padding: 23px 0px 21px;
+`;
 export const CopyRightP = styled.p`
 font-weight: 400;
 font-size: 16px;

@@ -2,12 +2,12 @@ import React from 'react'
 import styled from 'styled-components';
 
 export const ButtonStyle = styled.button`
-  background: #ffffff;
+  background-color: ${(props) => props.theme.pallet.Box};
   padding: 11px 15px 10px;
   font-weight: 500;
   font-size: 16px;
   line-height: 19px;
-  color: #1c1c1c;
+  color: ${(props) => props.theme.pallet.Text};
   outline: none;
   border: none;
   cursor: pointer;

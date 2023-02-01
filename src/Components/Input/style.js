@@ -15,7 +15,7 @@ export const Label = styled.label`
   font-size: 16px;
   line-height: 19px;
   letter-spacing: -0.2px;
-  color: #1c1c1c;
+  color: ${(props) => props.theme.pallet.Text};
   cursor: pointer;
 `;
 

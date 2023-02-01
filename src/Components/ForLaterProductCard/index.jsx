@@ -10,7 +10,7 @@ const Price = styled.h4`
   font-weight: 600;
   font-size: 18px;
   line-height: 22px;
-  color: #1c1c1c;
+  color: ${(props) => props.theme.pallet.Text};
   margin: 10px 0;
 `;
 

@@ -15,7 +15,7 @@ const ProductName = styled.h4`
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  color: #1c1c1c;
+  color: ${(props) => props.theme.pallet.Text};
   margin-bottom: 9px;
 `;
 const ProductPrice = styled.p`

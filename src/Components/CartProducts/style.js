@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const CartProductsBox = styled.div`
   margin-top: 23px;
-  background: #ffffff;
+  background-color: ${(props) => props.theme.pallet.Box};
   border: 1px solid #e3e8ee;
   border-radius: 6px;
   padding: 0px 20px 22px;
@@ -15,7 +15,7 @@ export const CouponCheckoutBox = styled.div`
 
 export const Products = styled.div``;
 export const Coupon = styled.div`
-  background: #ffffff;
+  background-color: ${(props) => props.theme.pallet.Box};
   border: 1px solid #e3e8ee;
   border-radius: 6px;
   padding: 20px 16px 22px 17px;
@@ -25,7 +25,7 @@ export const CouponQuestion = styled.h3`
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  color: #505050;
+  color: ${(props) => props.theme.pallet.fifty};
   margin-bottom: 9px;
 `;
 
@@ -59,7 +59,7 @@ export const ApplyButton = styled.button`
 `;
 
 export const Receipt = styled.div`
-  background: #ffffff;
+  background-color: ${(props) => props.theme.pallet.Box};
   border: 1px solid #e3e8ee;
   border-radius: 6px;
   box-shadow: 0px 4px 10px rgba(56, 56, 56, 0.1);
@@ -74,7 +74,7 @@ export const Subtotal = styled.p`
   font-size: 16px;
   line-height: 24px;
   letter-spacing: -0.2px;
-  color: #505050;
+  color: ${(props) => props.theme.pallet.fifty};
   margin-bottom: 5px;
 `;
 
@@ -100,7 +100,7 @@ export const Total = styled.div`
   font-weight: 600;
   font-size: 16px;
   line-height: 19px;
-  color: #1c1c1c;
+  color: ${(props) => props.theme.pallet.Text};
 `;
 
 export const CheckOutButton = styled.button`

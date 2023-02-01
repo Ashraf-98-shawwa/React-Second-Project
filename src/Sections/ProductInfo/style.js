@@ -5,7 +5,7 @@ import { CardButton } from "../Hero/style";
 
 
 export const ProductInfoBox = styled.div`
-  background: #ffffff;
+  background-color: ${(props) => props.theme.pallet.Box};
   border: 1px solid #e3e8ee;
   border-radius: 6px;
   margin-bottom: 20px;
@@ -46,7 +46,7 @@ export const ProductName = styled.h3`
   font-size: 20px;
   line-height: 28px;
   letter-spacing: -0.2px;
-  color: #1c1c1c;
+  color: ${(props) => props.theme.pallet.Text};
   margin-top: 5px;
   margin-bottom: 11px;
 `;
@@ -59,7 +59,6 @@ export const Prices = styled.div`
   display: flex;
   padding: 16px 16px 16px 6px;
   gap: 42px;
-  /* margin-bottom: 21px; */
 `;
 
 export const Price = styled.div`
@@ -102,7 +101,7 @@ export const BlackList = styled.ul`
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
-    color: #505050;
+    color: ${(props) => props.theme.pallet.fifty};
     text-transform: capitalize;
     padding: 13px 0;
     width: 198px;
@@ -117,7 +116,7 @@ export const HR = styled.div`
 
 
 export const SupplierDetails = styled.div`
-  background: #ffffff;
+  background-color: ${(props) => props.theme.pallet.Box};
   border: 1px solid #e3e8ee;
   box-shadow: 0px 1px 2px rgba(56, 56, 56, 0.08);
   border-radius: 6px;
@@ -153,11 +152,10 @@ export const Name = styled.div`
   font-size: 16px;
   line-height: 24px;
   letter-spacing: -0.2px;
-  color: #1c1c1c;
-  
-  & h3 { 
-      font-weight: 400;
+  color: ${(props) => props.theme.pallet.Text};
 
+  & h3 {
+    font-weight: 400;
   }
 `;
 
@@ -183,15 +181,16 @@ padding: 11px;
 font-size: 16px;
 `;
 export const SaveForLAterButton = styled(SupplierButton)`
-background-color: transparent;
+  background-color: transparent;
   width: 100%;
   padding: 11px;
   font-size: 16px;
   position: absolute;
-  bottom:-16%;
-  left:0;
-  display: flex; 
+  bottom: -16%;
+  left: 0;
+  display: flex;
   align-items: center;
-  gap:10px;
+  gap: 10px;
   justify-content: center;
+  color: ${(props) => props.theme.pallet.Text};
 `;

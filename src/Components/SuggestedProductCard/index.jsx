@@ -12,7 +12,7 @@ const SuggestedProductName = styled.h3`
   font-size: 16px;
   line-height: 24px;
   letter-spacing: -0.2px;
-  color: #1c1c1c;
+  color: ${(props) => props.theme.pallet.Text};
   margin-bottom: 3px;
 `;
 

@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const CategoryListBox = styled.section`
   margin-top: 20px;
-  background: #ffffff;
+  background-color: ${(props) => props.theme.pallet.Box};
   border: 1px solid #e0e0e0;
   border-radius: 11px;
   overflow: hidden;

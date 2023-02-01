@@ -2,8 +2,7 @@ import styled from "styled-components";
 import ElectronicsBanner from "../../Pictures/ElectronicsBanner.png";
 
 export const HeroBox = styled.section`
-  background-color: #fff;
-
+  background-color: ${(props) => props.theme.pallet.Box};
   margin-top: 20px;
   padding: 17px 20px 17px 14px;
 `;
@@ -37,12 +36,12 @@ export const CategoryLi = styled.li`
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  color: #1c1c1c;
   width: 250px;
-  color: #505050;
+  color: ${(props) => props.theme.pallet.fifty};
 
   &:hover {
     background-color: #e5f6ff;
+    background-color: ${(props) => props.theme.pallet.page};
   }
   &.active {
     border-radius: 6px;
@@ -58,9 +57,6 @@ export const Card = styled.div`
   background: ${(props) => props.color};
   border-radius: 6px;
   width: 200px;
-  /* padding: 16px 40px 22px 16px; */
-  /* padding: 16px 10px 22px 16px; */
-
   padding: ${(props) =>
     props.custom ? "16px 10px 22px 16px" : "16px 40px 22px 16px"};
   font-weight: 400;

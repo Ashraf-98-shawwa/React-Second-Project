@@ -11,7 +11,7 @@ import SG4 from "../../Pictures/SG4.png";
 import SG5 from "../../Pictures/SG5.png";
 
 const SuggestedProductsBox = styled.div`
-  background: #ffffff;
+  background-color: ${(props) => props.theme.pallet.Box};
   border: 1px solid #e3e8ee;
   border-radius: 6px;
   height: 553px;
@@ -23,7 +23,7 @@ const BoxName = styled.h4`
   font-weight: 600;
   font-size: 16px;
   line-height: 19px;
-  color: #1c1c1c;
+  color: ${(props) => props.theme.pallet.Text};
   margin-bottom: 14px;
 `;
 export default function SuggestedProducts() {

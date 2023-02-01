@@ -4,7 +4,7 @@ import FormsFooterNav from "../FormsFooterNav";
 import PayMethods from "../PayMethods/indes";
 
 const Footer = styled.footer`
-  background-color: white;
+  background-color: ${(props) => props.theme.pallet.Box};
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -12,7 +12,6 @@ const Footer = styled.footer`
   padding: 26px 124px;
   column-gap: 40px;
   row-gap: 15px;
-  
 
   @media (max-width: 600px) {
     & {

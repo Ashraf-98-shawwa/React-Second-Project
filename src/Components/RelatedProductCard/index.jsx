@@ -11,7 +11,7 @@ const PrName = styled.h3`
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  color: #505050;
+  color: ${(props) => props.theme.pallet.fifty};
   margin: 14px 0px 9px;
   width: 142px;
 `;
