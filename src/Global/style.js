@@ -12,7 +12,7 @@ export const GlobalStyle = createGlobalStyle`
 
 body {
 font-family: 'Inter', sans-serif;
-background-color: #F7F7F7;
+background-color: ${(props)=> props.theme.pallet.page};
 color:black;
 }
 
@@ -41,6 +41,7 @@ export const SectionsTitle = styled.h3`
   font-size: 24px;
   line-height: 32px;
   letter-spacing: -0.2px;
-  color: #1c1c1c;
+  color: ${(props) => props.theme.pallet.Text};
   margin-bottom: 24px;
 `;
+

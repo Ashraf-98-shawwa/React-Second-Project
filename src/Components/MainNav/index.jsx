@@ -15,7 +15,8 @@ const MainNavList = styled.ul`
 const MainNavLi = styled.li`
   font-weight: 500;
   font-size: 16px;
-  color: #1c1c1c;
+  color: ${(props) => props.theme.pallet.Text};
+
   cursor: pointer;
   &:hover {
     color: #127fff;
@@ -27,7 +28,11 @@ export default function MainNav() {
     <MainNavList>
       <MainNavLi>
         <FlexBetween>
-          <img style={{ marginRight: "6px" }} src={menu} alt="menu icon" />
+          <img
+            style={{ marginRight: "6px", background: "#F7F7F7" }}
+            src={menu}
+            alt="menu icon"
+          />
           All category
         </FlexBetween>
       </MainNavLi>

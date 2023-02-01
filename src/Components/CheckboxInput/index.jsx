@@ -19,18 +19,28 @@ const CheckLabel = styled.label`
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  color: #1c1c1c;
+  color: ${(props) => props.theme.pallet.Text};
   cursor: pointer;
 `;
 
 
 export default function CheckboxInput(props) {
+if(props.imgLabel) {
+  return (
+    <Flex style={{ paddingRight: "17px" }} gap="13">
+      <CheckBox id={props.id} type="checkbox" />
+      <CheckLabel htmlFor={props.id}><img src={props.imgLabel} alt="rating" /></CheckLabel>
+    </Flex>
+  );
+    
+}else {
 
-    return (
-      <Flex style={{ paddingRight: "17px" }} gap="13">
+  return (
+    <Flex style={{ paddingRight: "17px" }} gap="13">
         <CheckBox id={props.id} type="checkbox" />
         <CheckLabel htmlFor={props.id}>{props.label}</CheckLabel>
       </Flex>
     );
-  
+    
+  }
 }

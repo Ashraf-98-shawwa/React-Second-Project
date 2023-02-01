@@ -36,7 +36,7 @@ export const RequestP = styled.p`
 `;
 
 export const RequestFormBox = styled.form`
-  background-color: #fff;
+  background-color: ${(props) => props.theme.pallet.Footer  };
   padding: 22px 31px 25px 20px;
   width: 491px;
   box-shadow: 0px 1px 2px rgba(56, 56, 56, 0.25);

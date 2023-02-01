@@ -24,45 +24,25 @@ export default function Suppliers() {
     <SuppliersBox>
       <Container>
         <SectionsTitle>Suppliers by region</SectionsTitle>
-        <Flex  gap="15" align="center" wrap="wrap">
-          <SupplierCard img={UAE} name="United States" website="shopname.ae " />
-          <SupplierCard img={AUS} name="United States" website="shopname.ae " />
-          <SupplierCard img={Usa} name="United States" website="shopname.ae " />
-          <SupplierCard
-            img={Russia}
-            name="United States"
-            website="shopname.ae "
-          />
-          <SupplierCard
-            img={Italy}
-            name="United States"
-            website="shopname.ae "
-          />
-          <SupplierCard
-            img={DK}
-            name="United States"
-            website="shopname.ae "
-          />
-          <SupplierCard
-            img={FR}
-            name="United States"
-            website="shopname.ae "
-          />
+        <Flex gap="15" align="center" wrap="wrap">
           <SupplierCard
             img={UAE}
-            name="United States"
+            name="Arabic Emirates"
             website="shopname.ae "
           />
+          <SupplierCard img={AUS} name="Australia" website="shopname.ae " />
+          <SupplierCard img={Usa} name="United States" website="shopname.ae " />
+          <SupplierCard img={Russia} name="Russia" website="shopname.ae " />
+          <SupplierCard img={Italy} name="Italy" website="shopname.ae " />
+          <SupplierCard img={DK} name="Denmark" website="shopname.ae " />
+          <SupplierCard img={FR} name="France" website="shopname.ae " />
           <SupplierCard
-            img={China}
-            name="United States"
+            img={UAE}
+            name="Arabic Emirates"
             website="shopname.ae "
           />
-          <SupplierCard
-            img={UK}
-            name="United States"
-            website="shopname.ae "
-          />
+          <SupplierCard img={China} name="China" website="shopname.ae " />
+          <SupplierCard img={UK} name="Great Britain" website="shopname.ae " />
         </Flex>
       </Container>
     </SuppliersBox>

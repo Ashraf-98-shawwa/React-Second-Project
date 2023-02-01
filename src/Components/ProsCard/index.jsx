@@ -23,7 +23,7 @@ const ProsName = styled.h4`
   font-size: 16px;
   line-height: 24px;
   letter-spacing: -0.2px;
-  color: #1c1c1c;
+  color: ${(props) => props.theme.pallet.Text};
 `;
 
 const Prosdesc = styled.p`

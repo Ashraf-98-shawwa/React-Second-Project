@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const HeaderBox = styled.div`
-  background-color: #fff;
+  background-color: ${(props) => props.theme.pallet.page};
+  color: ${(props) => props.theme.pallet.Text};
 `;
 
 export const FlexBetween = styled.div`

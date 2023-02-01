@@ -8,7 +8,7 @@ const H2 = styled.h2`
   font-size: 24px;
   line-height: 32px;
   letter-spacing: -0.2px;
-  color: #1c1c1c;
+  color: ${(props) => props.theme.pallet.Text};
 `;
 export default function CartHeading() {
   return (

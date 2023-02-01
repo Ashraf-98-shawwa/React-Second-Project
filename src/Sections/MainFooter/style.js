@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const MainFooterBox = styled.section`
-  background-color: #fff;
+  background-color: ${(props) => props.theme.pallet.Footer};
+
   padding: 40px 0px 5px;
 `;
 export const BrandBox = styled.div`
@@ -15,7 +16,7 @@ export const BrandBoxP = styled.p`
   font-size: 16px;
   line-height: 24px;
   letter-spacing: -0.2px;
-  color: #505050;
+  color: ${(props) => props.theme.pallet.fifty};
   width: 276px;
 `;
 
@@ -23,7 +24,7 @@ export const FooterTitle = styled.h3`
   font-weight: 500;
   font-size: 16px;
   line-height: 22px;
-  color: #1c1c1c;
+  color: ${(props) => props.theme.pallet.Text};
   margin-bottom: 10px;
 `;
 

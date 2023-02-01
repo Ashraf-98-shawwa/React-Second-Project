@@ -3,6 +3,7 @@ import ElectronicsBanner from "../../Pictures/ElectronicsBanner.png";
 
 export const HeroBox = styled.section`
   background-color: #fff;
+
   margin-top: 20px;
   padding: 17px 20px 17px 14px;
 `;
