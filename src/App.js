@@ -14,17 +14,22 @@ import Cart from "./Pages/Cart";
 
 // Context
 import { themeContext } from "./Context/themeContex";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   const [theme, setTheme] = useState(lightTheme);
+
+  useEffect(() => {
+    localStorage.getItem("Theme") === "dark" ? setTheme(darkTheme) : setTheme(lightTheme);
+  
+  }, []); 
 
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
         <themeContext.Provider value={[theme, setTheme]}>
           <GlobalStyle />
-
+    
           <Routes>
             <Route path="/Login" element={<Login />} />
             <Route path="/Sign-up" element={<SignUp />} />

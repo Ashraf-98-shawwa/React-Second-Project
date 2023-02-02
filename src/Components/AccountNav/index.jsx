@@ -19,12 +19,11 @@ const AccountNavLinkStyle = {
   flexDirection: "column",
   gap: "7px",
   alignItems: "center",
-  
 };
 
 const AccountNavP = styled.p`
   color: #8b96a5;
-  
+
   font-size: 12px;
 `;
 
@@ -70,13 +69,17 @@ export default function AccountNav() {
       </li>
       <li>
         <ChangeThemeButton
-          onClick={() =>
+          onClick={() => {
             setTheme((prevState) =>
               prevState.theme === "light" ? darkTheme : lightTheme
-            )
-          }
+            );
+            localStorage.setItem(
+              "Theme",
+              theme === darkTheme ? "light" : "dark"
+            );
+          }}
         >
-          {theme.theme === "light" ? "Set Dark" : "Set Light"}
+          {theme.theme === "light" ? "Dark Theme" : "Light Theme"}
         </ChangeThemeButton>
       </li>
     </AccountNavlist>

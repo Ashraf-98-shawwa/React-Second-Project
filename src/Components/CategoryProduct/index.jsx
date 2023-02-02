@@ -23,7 +23,7 @@ const ProductPrice = styled.p`
   font-size: 13px;
   line-height: 16px;
   color: #8b96a5;
-  width: 55px;
+  width: 60px;
 `;
 
 export default function CategoryProduct(props) {
