@@ -12,8 +12,13 @@ export const GlobalStyle = createGlobalStyle`
 
 body {
 font-family: 'Inter', sans-serif;
-background-color: ${(props)=> props.theme.pallet.page};
+background-color: ${(props) => props.theme.pallet.page};
 color:black;
+}
+body input::-webkit-outer-spin-button,
+body input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 ul {

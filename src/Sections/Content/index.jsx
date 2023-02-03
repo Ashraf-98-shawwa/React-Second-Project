@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import styled from "styled-components";
 import Container from "../../Components/Container";
 import FilterCard from "../../Components/FilterCard";
 import LayoutFilter from "../../Components/LayoutFilter";
@@ -7,6 +6,8 @@ import Pagination from "../../Components/Pagination";
 import SelectedProductCard from "../../Components/SelectedProductCard";
 import { Flex } from "../../Global/style";
 import CheckboxInput from "../../Components/CheckboxInput";
+import RadioInput from "../../Components/RadioInput";
+
 
 // importing icons
 import S1 from "../../Pictures/S1.png";
@@ -20,60 +21,11 @@ import FourStars from "../../Pictures/4stars.png";
 import ThreeStars from "../../Pictures/3stars.png";
 import TwoStars from "../../Pictures/2stars.png";
 import S6 from "../../Pictures/S6.png";
-import RadioInput from "../../Components/RadioInput";
-
-const AccordionCardBox = styled.div`
-  padding: 14px 0px 15px;
-  border-top: 1px solid #e3e8ee;
-`;
-
-const AccordionName = styled.h3`
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 19px;
-  color: ${(props) => props.theme.pallet.Text};
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-`;
-
-const FiltersSelection = styled.div`
-  width: 240px;
-`;
-const ProductsSelected = styled.div`
-  width: 920px;
-`;
-
-
-const AccordionContent = styled.div`
-  display: ${(props) => (props.display === "block" ? "block" : "none")};
-  padding-top: 24px;
-  & ul li {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    color: ${(props) => props.theme.pallet.list};
-    margin-bottom: 16px;
-    cursor: pointer;
-  }
-
-  & ul li.blue {
-    color: #0d6efd;
-  }
-`;
-
-const ClearFiltersP = styled.p`
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
-  color: #0d6efd;
-  margin-top: 20px;
-  cursor: pointer;
-`;
+import { AccordionCardBox, AccordionContent, AccordionName, ClearFiltersP, FiltersSelection, ListInput, ListSubmit, MaxBox, MinBox, ProductsSelected } from "./style";
 
 
 export default function Content(props) {
-  const [Filters, setFilters] = useState(["Samsung","Apple"]);
+  const [Filters, setFilters] = useState(["Samsung", "Apple"]);
   const [categoryDisplay, setcategoryDisplay] = useState("none");
   const [BrandsDisplay, setBrandsDisplay] = useState("none");
   const [FeaturesDisplay, setFeaturesDisplay] = useState("none");
@@ -222,7 +174,21 @@ export default function Content(props) {
               <AccordionContent
                 display={PriceRange === "none" ? "none" : "block"}
               >
-                <ul>Price range</ul>
+                <ul>
+                  <form>
+                    <Flex gap="9">
+                      <MinBox>
+                        <h4>Min</h4>
+                        <ListInput type="number" placeholder="0" />
+                      </MinBox>
+                      <MaxBox>
+                        <h4>Max</h4>
+                        <ListInput type="number" placeholder="999999" />
+                      </MaxBox>
+                    </Flex>
+                    <ListSubmit value="Apply" type="submit"/>
+                  </form>
+                </ul>
               </AccordionContent>
             </AccordionCardBox>
 
@@ -513,7 +479,21 @@ export default function Content(props) {
               <AccordionContent
                 display={PriceRange === "none" ? "none" : "block"}
               >
-                <ul>Price range</ul>
+                <ul>
+                  <form>
+                    <Flex gap="9">
+                      <MinBox>
+                        <h4>Min</h4>
+                        <ListInput type="number" placeholder="0" />
+                      </MinBox>
+                      <MaxBox>
+                        <h4>Max</h4>
+                        <ListInput type="number" placeholder="999999" />
+                      </MaxBox>
+                    </Flex>
+                    <ListSubmit value="Apply" type="submit" />
+                  </form>
+                </ul>
               </AccordionContent>
             </AccordionCardBox>
 
@@ -611,7 +591,7 @@ export default function Content(props) {
               ""
             )}
 
-            <Flex  gap="20" wrap="wrap">
+            <Flex gap="20" wrap="wrap">
               <SelectedProductCard
                 img={S1}
                 orders="154"
