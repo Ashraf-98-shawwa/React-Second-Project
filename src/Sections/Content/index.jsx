@@ -176,6 +176,12 @@ export default function Content(props) {
               >
                 <ul>
                   <form>
+                    <input
+                      style={{ width: "100%" }}
+                      type="range"
+                      min="0"
+                      max="999999"
+                    />
                     <Flex gap="9">
                       <MinBox>
                         <h4>Min</h4>
@@ -186,7 +192,7 @@ export default function Content(props) {
                         <ListInput type="number" placeholder="999999" />
                       </MaxBox>
                     </Flex>
-                    <ListSubmit value="Apply" type="submit"/>
+                    <ListSubmit value="Apply" type="submit" />
                   </form>
                 </ul>
               </AccordionContent>
