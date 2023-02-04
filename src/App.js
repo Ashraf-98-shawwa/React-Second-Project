@@ -1,5 +1,5 @@
 import { GlobalStyle } from "./Global/style";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { darkTheme, lightTheme } from "./Global/theme";
 
@@ -28,9 +28,11 @@ function App() {
     <div className="App">
       <ThemeProvider theme={theme}>
         <themeContext.Provider value={[theme, setTheme]}>
+          
           <GlobalStyle />
     
           <Routes>
+            <Route index element={<Navigate to="Login"/>} />
             <Route path="/Login" element={<Login />} />
             <Route path="/Sign-up" element={<SignUp />} />
             <Route path="/Main" element={<Main />} />
@@ -38,6 +40,8 @@ function App() {
             <Route path="/Product" element={<Product />} />
             <Route path="/Cart" element={<Cart />} />
           </Routes>
+
+
         </themeContext.Provider>
       </ThemeProvider>
     </div>
