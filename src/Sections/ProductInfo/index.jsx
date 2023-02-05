@@ -50,7 +50,6 @@ export default function ProductInfo() {
   const [PhotoShown, SetPhotoShown] = useState(G1);
 
   const HandleChangePhoto = (e) => {
-    SetPhotoID(e.target.id);
     SetPhotoShown(e.target.src);
   };
 
