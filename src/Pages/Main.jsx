@@ -14,6 +14,7 @@ import Electronics from "../Pictures/Electronics.png";
 import Hero from "../Sections/Hero";
 import Offers from "../Sections/Offers";
 
+
 export default function Main() {
   return (
     <>
