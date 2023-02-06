@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, {  useEffect, useState } from "react";
 import Container from "../../Components/Container";
 import CountCard from "../../Components/CountCard";
 import OfferCard from "../../Components/OfferCard";
@@ -24,7 +24,7 @@ export default function Offers() {
   const [Minutes, setMinutes] = useState();
   const [Seconds, setSeconds] = useState();
 
-  let interval;
+  // let interval;
 
   // const startTimer = useCallback(() => {
   //   const CountDownDate = new Date("Feb 28,2023").getTime();
