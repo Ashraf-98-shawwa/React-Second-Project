@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Navigate, NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import FormHeading from "../FormHeading/FormHeading";
 import Input from "../Input";
 import { ErrorMessage, ErrorsList, FormBox, OR, Switcher } from "./style";
@@ -9,7 +9,6 @@ import { useAuthContext } from "../../Context/AuthContext";
 
 export default function LoginForm() {
   const {
-    isAuthorized,
     isLoading,
     setIsLoading,
     setisAuthorized,
@@ -24,7 +23,6 @@ export default function LoginForm() {
   const [Password, Setpassword] = useState("");
   const [checkbox, Setcheckbox] = useState(false);
 
-  const navigate = useNavigate();
 
   const schema = yup.object().shape({
     Username: yup.string().email().required(),

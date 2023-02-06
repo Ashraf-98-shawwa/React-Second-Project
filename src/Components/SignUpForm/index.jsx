@@ -16,8 +16,6 @@ import axios from "axios";
 export default function SignUpForm() {
 
    const {
-     isAuthorized,
-     isLoading,
      setIsLoading,
      setisAuthorized,
      setErrors,

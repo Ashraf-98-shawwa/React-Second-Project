@@ -41,9 +41,7 @@ const ChangeThemeButton = styled.button`
 export default function AccountNav() {
   const [theme, setTheme] = useContext(themeContext);
 
-  const { logout} = useAuthContext();
-
-
+  const { logout } = useAuthContext();
 
   return (
     <AccountNavlist>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Container from "../../Components/Container";
 import FilterCard from "../../Components/FilterCard";
 import LayoutFilter from "../../Components/LayoutFilter";
@@ -7,7 +7,6 @@ import SelectedProductCard from "../../Components/SelectedProductCard";
 import { Flex } from "../../Global/style";
 import CheckboxInput from "../../Components/CheckboxInput";
 import RadioInput from "../../Components/RadioInput";
-
 
 // importing icons
 import S1 from "../../Pictures/S1.png";
@@ -21,17 +20,31 @@ import FourStars from "../../Pictures/4stars.png";
 import ThreeStars from "../../Pictures/3stars.png";
 import TwoStars from "../../Pictures/2stars.png";
 import S6 from "../../Pictures/S6.png";
-import { AccordionCardBox, AccordionContent, AccordionName, ClearFiltersP, FiltersSelection, ListInput, ListSubmit, MaxBox, MinBox, ProductsSelected } from "./style";
-
+import {
+  AccordionCardBox,
+  AccordionContent,
+  AccordionName,
+  ClearFiltersP,
+  FiltersSelection,
+  ListInput,
+  ListSubmit,
+  MaxBox,
+  MinBox,
+  ProductsSelected,
+} from "./style";
 
 export default function Content(props) {
-  const [Filters, setFilters] = useState(["Samsung", "Apple"]);
+  const [Filters, setFilters] = useState([]);
   const [categoryDisplay, setcategoryDisplay] = useState("none");
   const [BrandsDisplay, setBrandsDisplay] = useState("none");
   const [FeaturesDisplay, setFeaturesDisplay] = useState("none");
   const [RatingsDisplay, setRatingsDisplay] = useState("none");
   const [ConditionDisplay, setConditionDisplay] = useState("none");
   const [PriceRange, setPriceRange] = useState("none");
+
+  useEffect(() => {
+    setFilters(["Samsung", "Apple"]);
+  }, []);
 
   if (props.lined) {
     return (

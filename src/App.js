@@ -69,6 +69,7 @@ function App() {
                   path="/Main"
                   element={isAuthorized ? <Main /> : <Navigate to="/Login" />}
                 />
+
                 <Route
                   path="/List"
                   element={isAuthorized ? <List /> : <Navigate to="/Login" />}

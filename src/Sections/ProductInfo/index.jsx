@@ -51,6 +51,7 @@ export default function ProductInfo() {
 
   const HandleChangePhoto = (e) => {
     SetPhotoShown(e.target.src);
+    SetPhotoID(e.target.id);
   };
 
   return (
