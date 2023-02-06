@@ -26,34 +26,38 @@ export default function Offers() {
 
   let interval;
 
-  const startTimer = useCallback(() => {
-    const CountDownDate = new Date("Feb 28,2023").getTime();
+  // const startTimer = useCallback(() => {
+  //   const CountDownDate = new Date("Feb 28,2023").getTime();
 
-    interval = setInterval(() => {
-      const now = new Date().getTime();
+  //   interval = setInterval(() => {
+  //     const now = new Date().getTime();
 
-      const distance = CountDownDate - now;
-      const days = Math.floor(distance / (24 * 60 * 60 * 1000));
-      const hours = Math.floor(
-        (distance % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000)
-      );
-      const minutes = Math.floor((distance % (60 * 60 * 1000)) / (60 * 1000));
-      const seconds = Math.floor((distance % (60 * 1000)) / 1000);
+  //     const distance = CountDownDate - now;
+  //     const days = Math.floor(distance / (24 * 60 * 60 * 1000));
+  //     const hours = Math.floor(
+  //       (distance % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000)
+  //     );
+  //     const minutes = Math.floor((distance % (60 * 60 * 1000)) / (60 * 1000));
+  //     const seconds = Math.floor((distance % (60 * 1000)) / 1000);
 
-      if (distance < 0) {
-        clearInterval(interval)
-      } else {
-        setDays(days);
-        setHours(hours);
-        setMinutes(minutes);
-        setSeconds(seconds);
-      }
-    })
-  }, [Days, Hours, Minutes, Seconds]);
+  //     if (distance < 0) {
+  //       clearInterval(interval)
+  //     } else {
+  //       setDays(days);
+  //       setHours(hours);
+  //       setMinutes(minutes);
+  //       setSeconds(seconds);
+  //     }
+  //   })
+  // }, [Days, Hours, Minutes, Seconds]);
 
   useEffect(() => {
-    startTimer();
-  }, [startTimer]);
+    // startTimer();
+    setDays(24);
+    setHours(12);
+    setMinutes(10);
+    setSeconds(5);
+  }, [Days, Hours, Minutes, Seconds]);
 
   return (
     <Container>
