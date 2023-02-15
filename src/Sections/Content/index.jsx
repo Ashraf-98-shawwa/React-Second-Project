@@ -42,8 +42,10 @@ export default function Content(props) {
   const [ConditionDisplay, setConditionDisplay] = useState("none");
   const [PriceRange, setPriceRange] = useState("none");
 
+ 
+
   useEffect(() => {
-    setFilters(["Samsung", "Apple"]);
+    setFilters(["Samsung", "Apple"]);    
   }, []);
 
   if (props.lined) {
@@ -296,7 +298,7 @@ export default function Content(props) {
             {Filters ? (
               <Flex align="center" gap="8">
                 {Filters.map((item) => (
-                  <FilterCard name={item} />
+                  <FilterCard key={item} name={item} />
                 ))}
                 <ClearFiltersP>Clear all filters</ClearFiltersP>
               </Flex>
@@ -305,9 +307,12 @@ export default function Content(props) {
             )}
 
             <SelectedProductCard
+              id="1"
               row
               img={S1}
               orders="154"
+              price="$998.00"
+              name="Canon Cmera EOS 2000, Black 10x zoom"
               PrPrice="$1128.00"
               Previous={true}
               description=" Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
@@ -315,42 +320,57 @@ export default function Content(props) {
             />
             <SelectedProductCard
               row
+              id="2"
               img={S2}
               description=" Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua"
               orders="154"
+              price="$998.00"
+              name="Canon Cmera EOS 2000, Black 10x zoom"
             />
 
             <SelectedProductCard
               row
               img={S3}
+              id="3"
               description=" Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua"
               orders="154"
+              price="$998.00"
+              name="Canon Cmera EOS 2000, Black 10x zoom"
             />
 
             <SelectedProductCard
               row
+              id="4"
               img={S4}
               description=" Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua"
               orders="154"
+              price="$998.00"
+              name="Canon Cmera EOS 2000, Black 10x zoom"
             />
 
             <SelectedProductCard
               row
               img={S5}
+              id="5"
               description=" Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua"
               orders="154"
+              price="$998.00"
+              name="Canon Cmera EOS 2000, Black 10x zoom"
             />
 
             <SelectedProductCard
               row
+              id="6"
               img={S6}
               description=" Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua"
               orders="154"
+              price="$998.00"
+              name="Canon Cmera EOS 2000, Black 10x zoom"
             />
             <Pagination />
           </ProductsSelected>
@@ -602,7 +622,7 @@ export default function Content(props) {
             {Filters ? (
               <Flex align="center" gap="8">
                 {Filters.map((item) => (
-                  <FilterCard name={item} />
+                  <FilterCard key={item} name={item} />
                 ))}
                 <ClearFiltersP>Clear all filters</ClearFiltersP>
               </Flex>
@@ -613,6 +633,9 @@ export default function Content(props) {
             <Flex gap="20" wrap="wrap">
               <SelectedProductCard
                 img={S1}
+                id="1"
+                price="$998.00"
+                name="Canon Cmera EOS 2000, Black 10x zoom"
                 orders="154"
                 PrPrice="$1128.00"
                 Previous={true}
@@ -620,59 +643,83 @@ export default function Content(props) {
             eiusmod tempor incididunt ut labore et dolore magna aliqua"
               />
               <SelectedProductCard
+                id="2"
                 img={S2}
                 description=" Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua"
                 orders="154"
+                price="$998.00"
+                name="Canon Cmera EOS 2000, Black 10x zoom"
               />
 
               <SelectedProductCard
+                id="3"
                 img={S3}
                 description=" Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua"
                 orders="154"
+                price="$998.00"
+                name="Canon Cmera EOS 2000, Black 10x zoom"
               />
 
               <SelectedProductCard
+                id="4"
                 img={S4}
                 description=" Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua"
                 orders="154"
+                price="$998.00"
+                name="Canon Cmera EOS 2000, Black 10x zoom"
               />
 
               <SelectedProductCard
+                id="5"
                 img={S5}
                 description=" Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua"
                 orders="154"
+                price="$998.00"
+                name="Canon Cmera EOS 2000, Black 10x zoom"
               />
 
               <SelectedProductCard
+                id="6"
                 img={S6}
                 description=" Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua"
                 orders="154"
+                price="$998.00"
+                name="Canon Cmera EOS 2000, Black 10x zoom"
               />
               <SelectedProductCard
+                id="7"
                 img={S1}
                 orders="154"
                 PrPrice="$1128.00"
                 Previous={true}
+                price="$998.00"
+                name="Canon Cmera EOS 2000, Black 10x zoom"
                 description=" Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua"
               />
               <SelectedProductCard
+                id="8"
                 img={S2}
                 description=" Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua"
                 orders="154"
+                price="$998.00"
+                name="Canon Cmera EOS 2000, Black 10x zoom"
               />
 
               <SelectedProductCard
                 img={S3}
+                id="9"
                 description=" Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua"
                 orders="154"
+                price="$998.00"
+                name="Canon Cmera EOS 2000, Black 10x zoom"
               />
             </Flex>
             <Pagination />

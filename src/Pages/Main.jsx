@@ -18,6 +18,10 @@ import Container from "../Components/Container";
 import { Flex } from "../Global/style";
 
 export default function Main() {
+
+  
+
+  
   return (
     <>
       <Header />

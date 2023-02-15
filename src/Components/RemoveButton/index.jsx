@@ -1,5 +1,6 @@
-import React from 'react'
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
+import { useProductContext } from "../../Context/productContext";
 
 const RemoveButtonBox = styled.button`
   font-weight: 500;
@@ -15,8 +16,20 @@ const RemoveButtonBox = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor:pointer
+  cursor: pointer;
 `;
-export default function RemoveButton() {
-  return <RemoveButtonBox>Remove</RemoveButtonBox>;
+export default function RemoveButton(props) {
+  const {
+    removeFromCart,
+  } = useProductContext();
+
+  return (
+    <RemoveButtonBox
+      onClick={(id) => {
+        removeFromCart(props.id);
+      }}
+    >
+      Remove
+    </RemoveButtonBox>
+  );
 }
