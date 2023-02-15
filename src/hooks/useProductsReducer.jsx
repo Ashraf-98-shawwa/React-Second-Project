@@ -3,8 +3,8 @@ import { useEffect, useReducer } from "react";
 let cart = JSON.parse(localStorage.getItem("cart"));
 
 const initialState = {
-  count: cart.length,
-  products: cart,
+  count: cart ? cart.length : 0,
+  products: cart?cart:[],
 };
 
 const ACTIONS = {
