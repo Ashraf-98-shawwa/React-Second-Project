@@ -4,13 +4,25 @@ import FormHeading from "../FormHeading/FormHeading";
 import Input from "../Input";
 import { ErrorMessage, ErrorsList, FormBox, OR, Switcher } from "./style";
 import * as yup from "yup";
+import axios from "axios";
+import { useAuthContext } from "../../Context/AuthContext";
 
 export default function LoginForm() {
+  const {
+    isLoading,
+    setIsLoading,
+    setisAuthorized,
+    setErrors,
+    Errors,
+    setToken,
+    setusername,
+  } = useAuthContext();
+
   const [passwordType, SetType] = useState("password");
   const [Username, SetUsername] = useState("");
   const [Password, Setpassword] = useState("");
   const [checkbox, Setcheckbox] = useState(false);
-  const [Errors, SetErrors] = useState([]);
+
 
   const schema = yup.object().shape({
     Username: yup.string().email().required(),
@@ -23,6 +35,7 @@ export default function LoginForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setIsLoading(true);
     schema
       .validate(
         {
@@ -32,12 +45,27 @@ export default function LoginForm() {
         },
         { abortEarly: false }
       )
-      .then(() => {
-        console.log("valid");
-        SetErrors([]);
+      .then(async () => {
+        const res = await axios.post(
+          `https://react-tt-api.onrender.com/api/users/login`,
+          {
+            email: Username,
+            password: Password,
+          }
+        );
+        if (res) {
+          setToken(res.data.token);
+          localStorage.setItem("token", res.data.token);
+          setusername(res.data.name);
+          localStorage.setItem("name", res.data.name);
+          setErrors([]);
+          setIsLoading(false);
+          setisAuthorized(true);
+        }
       })
       .catch((e) => {
-        SetErrors(e.errors);
+        setErrors(e.errors || [e.message]);
+        setIsLoading(false);
       });
   };
 
@@ -90,7 +118,11 @@ export default function LoginForm() {
         checked={checkbox}
       />
 
-      <Input IsSubmit={true} type="submit" value="Log In" />
+      <Input
+        IsSubmit={true}
+        type="submit"
+        value={isLoading ? "Loading..." : "Log In"}
+      />
       <OR>OR</OR>
       <Input IsGoogle={true} />
       <Input IsFacebook={true} />

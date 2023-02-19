@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import { Flex } from "../../Global/style";
 import CartProductCard from "../CartProductCard";
 import Container from "../Container";
@@ -8,24 +7,47 @@ import RemoveAllButton from "../RemoveAllButton";
 import BackToShopButton from "../BackToShopButton";
 
 // import images
-import C1 from "../../Pictures/C1.png";
-import C2 from "../../Pictures/C2.png";
-import C3 from "../../Pictures/C3.png";
+// import C1 from "../../Pictures/C1.png";
+// import C2 from "../../Pictures/C2.png";
+// import C3 from "../../Pictures/C3.png";
 import AE from "../../Pictures/AE.png";
 import MC from "../../Pictures/MC.png";
 import PP from "../../Pictures/PP.png";
 import Vissa from "../../Pictures/Vissa.png";
 import AP from "../../Pictures/ApplePay.png";
-import { ApplyButton, CartProductsBox, CheckOutButton, Coupon, CouponCheckoutBox, CouponInput, CouponQuestion, Discount, PaymentMethodsPics, Products, Receipt, Subtotal, Tax, Total } from "./style";
-
+import {
+  ApplyButton,
+  CartProductsBox,
+  CheckOutButton,
+  Coupon,
+  CouponCheckoutBox,
+  CouponInput,
+  CouponQuestion,
+  Discount,
+  PaymentMethodsPics,
+  Products,
+  Receipt,
+  Subtotal,
+  Tax,
+  Total,
+} from "./style";
+import { useProductContext } from "../../Context/productContext";
 
 export default function CartProducts() {
+
+
+  const {
+    state: { products },
+  } = useProductContext();
+
+
+
   return (
     <Container>
       <Flex gap="20">
         <Products>
           <CartProductsBox>
-            <CartProductCard
+            {/* <CartProductCard
               name="T-shirts with multiple colors, for men and lady"
               img={C1}
               count="9"
@@ -48,7 +70,25 @@ export default function CartProducts() {
               Desc="Size: medium, Color: blue, Material: Plastic Seller: Artel
             Market"
               price="$170.50"
-            />
+            /> */}
+
+            {products.length ? (
+              <>
+                {products.map((item) => (
+                  <CartProductCard
+                    key={item.id}
+                    id={item.id}
+                    name={item.name}
+                    img={item.img}
+                    count="1"
+                    Desc={item.des}
+                    price={item.price}
+                  />
+                ))}
+              </>
+            ) : (
+              <p style={{ color: "white",marginTop:"30px" }}>No Products in the cart </p>
+            )}
             <ShopRemove>
               <Flex justify="space-between">
                 <BackToShopButton />

@@ -1,14 +1,15 @@
 import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { themeContext } from "../../Context/themeContex";
+import { darkTheme, lightTheme } from "../../Global/theme";
+import { useAuthContext } from "../../Context/AuthContext";
 
 // import  icons
 import profile from "../../Pictures/person.png";
 import heart from "../../Pictures/heart.png";
 import cart from "../../Pictures/cart.png";
 import chat from "../../Pictures/chat.png";
-import { themeContext } from "../../Context/themeContex";
-import { darkTheme, lightTheme } from "../../Global/theme";
 
 const AccountNavlist = styled.ul`
   display: flex;
@@ -40,6 +41,8 @@ const ChangeThemeButton = styled.button`
 export default function AccountNav() {
   const [theme, setTheme] = useContext(themeContext);
 
+  const { logout } = useAuthContext();
+
   return (
     <AccountNavlist>
       <li>
@@ -48,7 +51,6 @@ export default function AccountNav() {
           <AccountNavP>Profile</AccountNavP>
         </NavLink>
       </li>
-
       <li>
         <NavLink style={AccountNavLinkStyle} to="/Message">
           <img width="21px" height="21px" src={chat} alt="chat icon" />
@@ -81,6 +83,7 @@ export default function AccountNav() {
         >
           {theme.theme === "light" ? "Dark Theme" : "Light Theme"}
         </ChangeThemeButton>
+        <ChangeThemeButton onClick={logout}>Log Out</ChangeThemeButton>
       </li>
     </AccountNavlist>
   );

@@ -21,9 +21,28 @@ import { NavLink } from "react-router-dom";
 import orangestar from "../../Pictures/orangeStar.png";
 import graystar from "../../Pictures/graystar.png";
 import heart from "../../Pictures/emptyheart.png";
+import { useProductContext } from "../../Context/productContext";
 
 export default function SelectedProductCard(props) {
   const [like, SetLike] = useState(false);
+  
+  const {
+    state: { products },
+    addToCart,
+    removeFromCart,
+  } = useProductContext();
+
+
+
+  // useEffect(() => {
+  //   localStorage.setItem("cart", JSON.stringify(products));
+  // }, [products]);
+
+  const isExistInCart = (id) => products.find((item) => item.id === id);
+
+  const toggleCart = (product) => {
+    isExistInCart(product.id) ? removeFromCart(product.id) : addToCart(product);
+  };
 
   const HandleLike = () => {
     SetLike((prevstate) => !prevstate);
@@ -34,11 +53,11 @@ export default function SelectedProductCard(props) {
       <SelectedProductCardBox>
         <Flex gap="5">
           <div>
-            <img  width="189px" src={props.img} alt="selected product" />
+            <img width="189px" src={props.img} alt="selected product" />
           </div>
           <ProductDetails>
-            <ProductName>Canon Cmera EOS 2000, Black 10x zoom</ProductName>
-            <ProductPrice>$998.00</ProductPrice>
+            <ProductName>{props.name}</ProductName>
+            <ProductPrice>{props.price}</ProductPrice>
 
             {props.Previous === true ? (
               <PreviousPrice>{props.PrPrice}</PreviousPrice>
@@ -67,6 +86,23 @@ export default function SelectedProductCard(props) {
           <Heart className={like ? "active" : ""} onClick={HandleLike}>
             <img src={heart} alt="heart" />
           </Heart>
+          <Heart
+            style={{ top: 70 }}
+            onClick={() => {
+
+              let product = {
+                id: props.id,
+                img: props.img,
+                name: props.name,
+                des: props.description,
+                price: props.price,
+              };
+
+              toggleCart(product);
+            }}
+          >
+            {isExistInCart(props.id) ? "-" : "+"}
+          </Heart>
         </Flex>
       </SelectedProductCardBox>
     );
@@ -75,10 +111,15 @@ export default function SelectedProductCard(props) {
       <SelectedProductCardBox height width>
         <Flex direction="column">
           <div style={{ textAlign: "center" }}>
-            <img height="202px" width="189px" src={props.img} alt="selected product" />
+            <img
+              height="202px"
+              width="189px"
+              src={props.img}
+              alt="selected product"
+            />
           </div>
           <ProductDetails MT>
-            <ProductPrice>$998.00</ProductPrice>
+            <ProductPrice>{props.price}</ProductPrice>
 
             {props.Previous === true ? (
               <PreviousPrice>{props.PrPrice}</PreviousPrice>
@@ -97,10 +138,28 @@ export default function SelectedProductCard(props) {
             </RateOrderShiping>
           </ProductDetails>
           <ProductName width FW color MT>
-            Canon Cmera EOS 2000, Black 10x zoom
+            {props.name}
           </ProductName>
           <Heart bottom className={like ? "active" : ""} onClick={HandleLike}>
             <img src={heart} alt="heart" />
+          </Heart>
+          <Heart
+            style={{ top: 300 }}
+            onClick={() => {
+              console.log(products);
+              let product = {
+                id: props.id,
+                img: props.img,
+                name: props.name,
+                des: props.description,
+                price: props.price,
+              };
+              toggleCart(product);
+
+              console.log(products);
+            }}
+          >
+            {isExistInCart(props.id) ? "-" : "+"}
           </Heart>
         </Flex>
       </SelectedProductCardBox>

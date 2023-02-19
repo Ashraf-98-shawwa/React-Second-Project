@@ -2,47 +2,97 @@ import { GlobalStyle } from "./Global/style";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { darkTheme, lightTheme } from "./Global/theme";
-
-
-// Pages
-import Login from "./Pages/Login";
-import SignUp from "./Pages/SignUp";
-import Main from "./Pages/Main";
-import List from "./Pages/List";
-import Product from "./Pages/Product";
-import Cart from "./Pages/Cart";
+import { lazy, Suspense } from "react";
 
 // Context
 import { themeContext } from "./Context/themeContex";
 import { useEffect, useState } from "react";
+import { useAuthContext } from "./Context/AuthContext";
+import ErrorBoundary from "./Components/ErrorBoundary";
+import ProductProvider from "./Context/productContext";
+
+// Pages
+const Login = lazy(() => import("./Pages/Login"));
+const SignUp = lazy(() => import("./Pages/SignUp"));
+const Main = lazy(() => import("./Pages/Main"));
+const List = lazy(() => import("./Pages/List"));
+const Product = lazy(() => import("./Pages/Product"));
+const Cart = lazy(() => import("./Pages/Cart"));
 
 function App() {
   const [theme, setTheme] = useState(lightTheme);
+  const { isAuthorized, setToken, setisAuthorized } = useAuthContext();
 
   useEffect(() => {
-    localStorage.getItem("Theme") === "dark" ? setTheme(darkTheme) : setTheme(lightTheme);
-  
-  }, []); 
+    localStorage.getItem("Theme") === "dark"
+      ? setTheme(darkTheme)
+      : setTheme(lightTheme);
+
+    const token = localStorage.getItem("token");
+    if (token) {
+      setToken(token);
+      setisAuthorized(true);
+    }
+  }, [setToken, setisAuthorized]);
 
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
-        <themeContext.Provider value={[theme, setTheme]}>
-          
-          <GlobalStyle />
-    
-          <Routes>
-            <Route index element={<Navigate to="Login"/>} />
-            <Route path="/Login" element={<Login />} />
-            <Route path="/Sign-up" element={<SignUp />} />
-            <Route path="/Main" element={<Main />} />
-            <Route path="/List" element={<List />} />
-            <Route path="/Product" element={<Product />} />
-            <Route path="/Cart" element={<Cart />} />
-          </Routes>
+        <ProductProvider>
+          <ErrorBoundary>
+            <themeContext.Provider value={[theme, setTheme]}>
+              <GlobalStyle />
+              <Suspense
+                fallback={
+                  <div
+                    style={{
+                      height: "100vh",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      backgroundColor: "gray",
+                    }}
+                  >
+                    <h1>loading...</h1>
+                  </div>
+                }
+              >
+                <Routes>
+                  <Route index element={<Navigate to="Login" />} />
+                  <Route
+                    path="/Login"
+                    element={isAuthorized ? <Navigate to="/Main" /> : <Login />}
+                  />
+                  <Route
+                    path="/Sign-up"
+                    element={
+                      isAuthorized ? <Navigate to="/Main" /> : <SignUp />
+                    }
+                  />
+                  <Route
+                    path="/Main"
+                    element={isAuthorized ? <Main /> : <Navigate to="/Login" />}
+                  />
 
-
-        </themeContext.Provider>
+                  <Route
+                    path="/List"
+                    element={isAuthorized ? <List /> : <Navigate to="/Login" />}
+                  />
+                  <Route
+                    path="/Product"
+                    element={
+                      isAuthorized ? <Product /> : <Navigate to="/Login" />
+                    }
+                  />
+                  <Route
+                    path="/Cart"
+                    element={isAuthorized ? <Cart /> : <Navigate to="/Login" />}
+                  />
+                </Routes>
+              </Suspense>
+            </themeContext.Provider>
+          </ErrorBoundary>
+        </ProductProvider>
       </ThemeProvider>
     </div>
   );

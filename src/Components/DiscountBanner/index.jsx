@@ -40,6 +40,7 @@ const RightBox = styled.div`
   right: 0;
   height: 100%;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%);
+
   z-index: 0;
 `;
 

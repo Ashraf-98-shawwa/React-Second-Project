@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import Container from "../../Components/Container";
 import ForLaterProductCard from "../../Components/ForLaterProductCard";
 import { Flex } from "../../Global/style";

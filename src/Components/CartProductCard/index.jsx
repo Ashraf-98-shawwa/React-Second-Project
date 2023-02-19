@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import { Flex } from "../../Global/style";
 
 import RemoveButton from "../RemoveButton";
@@ -10,18 +9,17 @@ import arrow from "../../Pictures/downarrow.png"
 
 
 export default function CartProductCard(props) {
+  
     return (
       <CartProductCardBox>
         <Flex justify="space-between">
           <ProductDetailsBox>
-            <img src={props.img} alt="cart product" />
+            <img width={80} height={80} src={props.img} alt="cart product" />
             <Details>
-                        <Name>{props.name}</Name>
-              <Desc>
-             {props.Desc}
-              </Desc>
+              <Name>{props.name}</Name>
+              <Desc>{props.Desc}</Desc>
               <Flex gap="6">
-                <RemoveButton />
+                <RemoveButton id={props.id} />
                 <SaveForLaterButton />
               </Flex>
             </Details>
@@ -29,8 +27,8 @@ export default function CartProductCard(props) {
           <ProductPrice>
             <Flex gap="12" align="flex-end" direction="column">
               <Price>{props.price}</Price>
-              <CartSelect name="Test" id="Test">
-                <option selected value={props.count}>
+              <CartSelect defaultValue={"1"} name="Test" id="Test">
+                <option  value={props.count}>
                   Qty: {props.count}
                 </option>
                 <option value="1">Qty: 1</option>
@@ -43,7 +41,12 @@ export default function CartProductCard(props) {
               </CartSelect>
             </Flex>
             <img
-              style={{ position: "absolute", bottom: "50px", right: "10px",zIndex:"0" }}
+              style={{
+                position: "absolute",
+                bottom: "50px",
+                right: "10px",
+                zIndex: "0",
+              }}
               src={arrow}
               alt="arrow icon"
             />

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { useProductContext } from "../../Context/productContext";
 import Container from "../Container";
 
 const H2 = styled.h2`
@@ -11,9 +12,10 @@ const H2 = styled.h2`
   color: ${(props) => props.theme.pallet.Text};
 `;
 export default function CartHeading() {
+  const { state } = useProductContext();
   return (
     <Container>
-      <H2>My cart (3)</H2>
+      <H2>My cart ({state.count})</H2>
     </Container>
   );
 }

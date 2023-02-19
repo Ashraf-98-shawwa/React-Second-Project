@@ -10,8 +10,21 @@ import {
 } from "../LoginForm/style";
 import { Dflex, HR } from "./style";
 import * as yup from "yup";
+import { useAuthContext } from "../../Context/AuthContext";
+import axios from "axios";
 
 export default function SignUpForm() {
+
+   const {
+     setIsLoading,
+     setisAuthorized,
+     setErrors,
+     Errors,
+     setToken,
+     setusername,
+  } = useAuthContext();
+  
+
   const [Name, SetName] = useState("");
   const [Surname, SetSurname] = useState("");
   const [Email, Setemail] = useState("");
@@ -19,7 +32,6 @@ export default function SignUpForm() {
   const [Password, SetPassword] = useState("");
   const [Repeatpassword, SetRepeatpassword] = useState("");
   const [checkbox, Setcheckbox] = useState(false);
-  const [Errors, SetErrors] = useState([]);
 
   const schema = yup.object().shape({
     Name: yup.string().required(),
@@ -53,14 +65,32 @@ export default function SignUpForm() {
         },
         { abortEarly: false }
       )
-      .then(() => {
-        console.log("valid");
-        SetErrors([]);
+      .then(async () => {
+          const res = await axios.post(
+            `https://react-tt-api.onrender.com/api/users/signup`,
+            {
+              name: Name,
+              email: Email,
+              password: Password,
+            }
+          );
+        if (res) {
+          setToken(res.data.token);
+          localStorage.setItem("token", res.data.token);
+          setusername(res.data.name);
+          localStorage.setItem("name", res.data.name);
+          setErrors([]);
+          setIsLoading(false);
+          setisAuthorized(true);
+        }
       })
       .catch((e) => {
-        SetErrors(e.errors);
+        setErrors(e.errors  || [e.message]);
+        setIsLoading(false);
       });
   };
+
+  
   const handleChangeInput = (e, Tel) => {
     const { id, value } = e.target;
     if (id === "Name") {
