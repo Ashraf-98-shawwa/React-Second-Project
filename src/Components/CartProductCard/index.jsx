@@ -43,7 +43,7 @@ export default function CartProductCard(props) {
             <img
               style={{
                 position: "absolute",
-                bottom: "50px",
+                bottom: "72px",
                 right: "10px",
                 zIndex: "0",
               }}
